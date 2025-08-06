@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+
+    .header {
+      background: white;
+      padding: 10px 20px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-left img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .header-left h2 {
+      font-size: 20px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .top-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-buttons button {
+      padding: 6px 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .red-line {
+      height: 3px;
+      background: red;
+      margin-top: 10px;
+    }
+
+    .main-content {
+      display: flex;
+      height: calc(100vh - 83px);
+      background-color: white;
+      padding-left: 120px;
+      align-items: center;
+    }
+
+    .photo-box {
+      height: 100%;
+      border: 1px solid #000;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+    }
+
+    .photo-box img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ✅ PRINT ONLY PHOTO FIX */
+    @media print {
+      body {
+        background: white;
+      }
+
+      .header,
+      .top-buttons,
+      .red-line {
+        display: none;
+      }
+
+      .main-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .photo-box {
+        border: none;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.Zgi9joi31E9zVS2-f_NoxwAAAA?pid=Api&P=0&h=180" alt="BTU Logo">
+        <h2>
+          बीकानेर तकनीकी विश्वविद्यालय, बीकानेर<br>
+          Bikaner Technical University, Bikaner
+        </h2>
+      </div>
+      <div class="top-buttons">
+        <button onclick="window.history.back()">Back</button>
+        <button onclick="window.print()">Print</button>
+      </div>
+    </div>
+    <div class="red-line"></div>
+  </div>
+
+  <!-- Photo Section -->
+  <div class="main-content">
+    <div class="photo-box">
+      <img src="your-photo.jpg" alt="Student Photo">
+    </div>
+  </div>
+
+</body>
+</html>
+

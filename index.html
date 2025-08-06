@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BTU Result Page</title>
+  <link rel="stylesheet" href="style.css">
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+
+    /* 🏫 BTU Header */
+    .btu-header {
+      text-align: center;
+      background: white;
+      padding: 20px 10px 10px;
+      border-bottom: none;
+    }
+
+    .btu-header img {
+      height: 70px;
+      margin-bottom: 10px;
+    }
+
+    .btu-header h1 {
+      color: #0066cc;
+      font-size: 24px;
+      margin: 5px 0;
+    }
+
+    .btu-header h2 {
+      color: #0066cc;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    /* 💼 Login Form */
+    .form-container {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    input, button {
+      padding: 8px;
+      width: 200px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004a99;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ BTU Header -->
+  <div class="btu-header">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.Zgi9joi31E9zVS2-f_NoxwAAAA?pid=Api&P=0&h=180" alt="BTU Logo">
+    <h1>बीकानेर तकनीकी विश्वविद्यालय, बीकानेर</h1>
+    <h2>Bikaner Technical University, Bikaner</h2>
+  </div>
+<div class="student-result-strip">
+  <h3>STUDENT RESULT</h3>
+</div>
+
+<style>
+  .student-result-strip {
+    background: linear-gradient(to right, purple, teal, orange);
+    border-top: 3px solid red;
+    padding: 10px 20px;
+  }
+
+  .student-result-strip h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: yellow;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+</style>
+  <div class="session-bar">RESULT SESSION 2022-23</div>
+
+  <div class="main">
+    <!-- Left Side -->
+    <div class="left-box">
+      <table>
+        <tr><th>Course</th><th>Uploaded on</th></tr>
+        <tr><td>B.Tech (AI)</td><td>01-05-2024</td></tr>
+        <tr><td>Bachelor of Technology (Aeronautical Engineering)-III</td><td>28-06-2024</td></tr>
+        <tr><td>Bachelor of Technology (Computer Science & Engineering (Cyber Security)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Computer Science and Engineering (Data Science)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Electronic Instrumentation & Control Engineering)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Electronics & Communication Engineering)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Electrical Engineering)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Electrical and Electronics Engineering)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Information Technology)-III</td><td>01-07-2025</td></tr>
+        <tr><td>Bachelor of Technology (Mechanical Engineering)-III</td><td>01-07-2025</td></tr>
+        <!-- Add more rows here -->
+      </table>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-box">
+      <h3>RESULT</h3>
+      <label>RESULT TYPE:</label>
+      <select>
+        <option>Back Paper</option>
+        <option>Regular</option>
+      </select>
+      <form onsubmit="return validateForm(event)">
+  <label>ROLLNO :</label>
+  <input type="text" id="rollno" required>
+
+  <label>Image Text :</label><br>
+  <img src="https://dummyimage.com/150x40/cccccc/000000&text=66NDQ" alt="captcha"><br><br>
+
+  <label>Please Enter Image Text :</label>
+  <input type="text" id="captcha" required>
+
+  <input type="submit" value="Submit">
+</form>
+<script>
+  function validateForm(event) {
+    event.preventDefault();
+
+    const roll = document.getElementById("rollno").value.trim();
+    const captchaInput = document.getElementById("captcha").value.trim();
+    
+    const validRoll = "22EEAIT018";       // ✅ Correct Roll Number
+    const validCaptcha = "66NDQ";              // ✅ Captcha image text
+
+    if (roll !== validRoll) {
+      alert("❌ Invalid Roll Number");
+      return false;
+    }
+
+    if (captchaInput !== validCaptcha) {
+      alert("❌ Invalid Captcha");
+      return false;
+    }
+
+    // ✅ If both correct:
+    window.location.href = "photo.html";
+    return false;
+  }
+</script>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+<script>
+  function openPhotoPage() {
+    // Tu chahe to yaha form validation bhi daal sakta hai
+    window.location.href = "photo.html";
+    return false; // form reload na ho
+  }
+</script>
+
+</html>
